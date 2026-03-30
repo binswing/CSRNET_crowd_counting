@@ -142,13 +142,12 @@ def run_selectable_camera_demo(model, camera_index):
     cv2.destroyAllWindows()
 
 checkpoint_path = "./checkpoints/"
-checkpoint_name = "nholamkiucanhvaem100.pth"
+checkpoint_name = "xinnguoihayvenoiday105.pth"
 
-if not os.path.exists(checkpoint_path):
-    snapshot_download(
-        repo_id="b1nswing/CSRNET_config_B", 
-        local_dir="./checkpoints"
-    )
+snapshot_download(
+    repo_id="b1nswing/CSRNET_config_B", 
+    local_dir="./checkpoints"
+)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Evaluating on {device}...")
